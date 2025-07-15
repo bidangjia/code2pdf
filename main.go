@@ -219,7 +219,8 @@ func displayCodeLines(pdf *gofpdf.Fpdf, lines []string, startLineNumber int, lin
 			pdf.CellFormat(spacerWidth, 5, "", "", 0, "L", false, 0, "") // 空白间距单元格
 
 			// 代码单元格
-			pdf.SetTextColor(0, 0, 0) // 黑色
+			pdf.SetTextColor(0, 0, 0)  // 黑色
+			pdf.SetFont("msyh", "", 8) // 使用微软雅黑字体显示代码内容，支持中文
 			availableWidth := float64(190) - lineNumWidth - spacerWidth
 			pdf.MultiCell(availableWidth, 5, line, "", "L", false) // 左对齐代码内容
 		}
@@ -428,7 +429,8 @@ func generatePDF(config *Config) error {
 				pdf.CellFormat(spacerWidth, 5, "", "", 0, "L", false, 0, "") // 空白间距单元格
 
 				// 代码单元格
-				pdf.SetTextColor(0, 0, 0) // 黑色
+				pdf.SetTextColor(0, 0, 0)  // 黑色
+				pdf.SetFont("msyh", "", 8) // 使用微软雅黑字体显示代码内容，支持中文
 				availableWidth := float64(190) - lineNumWidth - spacerWidth
 				pdf.MultiCell(availableWidth, 5, line, "", "L", false) // 左对齐代码内容
 
