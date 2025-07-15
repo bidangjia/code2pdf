@@ -189,8 +189,8 @@ func displayCodeLines(pdf *gofpdf.Fpdf, lines []string, startLineNumber int, lin
 
 		// 如果当前页面剩余空间不足，添加新页
 		if neededSpace > remainingSpace {
-			pdf.AddPage()
-			remainingSpace = pageHeight // 重置剩余空间为页面高度
+			// pdf.AddPage()
+			// remainingSpace = pageHeight // 重置剩余空间为页面高度
 		}
 
 		// 每页显示指定行数
